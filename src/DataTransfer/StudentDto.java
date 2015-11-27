@@ -27,7 +27,9 @@ public class StudentDto {
     public void setUserId(String id) {
         this.user_id = id;
     }
-    
+    public String getUserName() {
+        return this.user_name;
+    }
     public void setUserName(String name) {
         this.user_name = name;
     }
