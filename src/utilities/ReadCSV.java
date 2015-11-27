@@ -19,10 +19,7 @@ import DataTransfer.StudentDto;
 
 public class ReadCSV {
     
-    
-	final File courseFile = new File("C:\\Users\\gaurav\\workspace\\CSVProjectInstructure\\course.csv");
-	final File studentFile = new File("C:\\Users\\gaurav\\workspace\\CSVProjectInstructure\\student.csv");
-	
+   
     public List<CourseDto> getCourseData(final File courseFile) throws IOException {
     	
     	

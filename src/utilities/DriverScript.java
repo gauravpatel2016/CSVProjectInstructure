@@ -17,7 +17,8 @@ public class DriverScript {
 		
 	 final String studentFile = args[0];
      final String courseFile = args[1];
-    
+     
+     
      final ReadCSV csvExtractor = new ReadCSV();
      final CourseDao courseDao = new CourseDao();
      final StudentDao studentDao = new StudentDao();
