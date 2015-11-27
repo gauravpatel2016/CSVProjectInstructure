@@ -44,5 +44,10 @@ public class CourseDaoTest {
 	public void verifywrongHeaders() throws IOException {
 		assertFalse(courseExtractor.checkHeader(courseFile, "coursename"));
 	}
+	
+	@Test
+	public void verifyvalidHeaders() throws IOException {
+		assertTrue(courseExtractor.checkHeader(courseFile, "course_name"));
+	}
 
 }
