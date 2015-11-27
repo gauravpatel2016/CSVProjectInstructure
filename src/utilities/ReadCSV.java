@@ -72,8 +72,22 @@ public class ReadCSV {
 	    
     }
 
-	private boolean checkHeader(File studentFile, String string) {
-		// TODO Auto-generated method stub
+	private boolean checkHeader(File typefile, String word) throws IOException {
+	    InputStream myinput = new FileInputStream(typefile);
+	    InputStreamReader inputread = new InputStreamReader(myinput, Charset.forName("UTF-8"));
+	    BufferedReader readbuffer = new BufferedReader(inputread);
+		try {
+			String headerLine = readbuffer.readLine();
+			return headerLine.contains(word);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			readbuffer.close();
+			inputread.close();
+			myinput.close();
+			
+		}
 		return false;
 	}
 
