@@ -8,26 +8,35 @@ public class CourseDto {
 	 * student columns:    user_id,   user_name, course_id, state
 	 */
 	
+	/*
+	 * Member Variables - Course Class
+	 */
     private String course_id;
     private String course_name;
     private String course_state;
     
-    public String getId() {
+    
+    /*
+     * 
+     *  Getter - Setter for Member Vars 
+     */
+    
+    public String getCourseId() {
         return this.course_id;
     }
-    public void setId(String id) {
+    public void setCourseId(String id) {
         this.course_id = id;
     }
-    public String getName() {
+    public String getCourseName() {
         return this.course_name;
     }
-    public void setName(String name) {
+    public void setCourseName(String name) {
         this.course_name = name;
     }
-    public String getState() {
+    public String getCourseState() {
         return this.course_state;
     }
-    public void setState(String state) {
+    public void setCourseState(String state) {
         this.course_state = state;
     }
 }
