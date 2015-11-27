@@ -72,7 +72,7 @@ public class ReadCSV {
 	    
     }
 
-	private boolean checkHeader(File typefile, String word) throws IOException {
+	public boolean checkHeader(File typefile, String word) throws IOException {
 	    InputStream myinput = new FileInputStream(typefile);
 	    InputStreamReader inputread = new InputStreamReader(myinput, Charset.forName("UTF-8"));
 	    BufferedReader readbuffer = new BufferedReader(inputread);
