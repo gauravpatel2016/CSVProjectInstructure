@@ -1,4 +1,4 @@
-package DataAccess;
+package DataTransfer;
 
 public class CourseDto {
 
