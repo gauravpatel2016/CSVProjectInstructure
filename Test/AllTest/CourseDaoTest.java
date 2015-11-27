@@ -27,7 +27,22 @@ public class CourseDaoTest {
 	        	daoObject.insert(course);
 	        }
 	}
-	
 
+	@Test
+	public void testGetById() throws IOException {
+		CourseDto result= daoObject.getById("1002");
+		
+		assertEquals("CourseDto [id=1002, name=Math, state=Active]" , result.toString());
+	}
 	
+	@Test
+	public void verifyifDataNotInFile() {
+		assertNull("Data is not in the file", daoObject.getById("4000"));	
+	}
+
+	@Test
+	public void verifywrongHeaders() throws IOException {
+		assertFalse(courseExtractor.checkHeader(courseFile, "coursename"));
+	}
+
 }
