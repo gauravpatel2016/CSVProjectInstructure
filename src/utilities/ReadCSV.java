@@ -22,10 +22,10 @@ public class ReadCSV {
     
    
     public List<CourseDto> getCourseData(final File courseFile) throws IOException {
-    	if(!checkHeader(courseFile,"user_name")){
+        if(!checkHeader(courseFile,"course_name")){
         	  throw new FileNotFoundException("Invalid Course.csv File");
       
-          }
+        }
     	
         final List<CourseDto> courseList = new ArrayList<>();
         
