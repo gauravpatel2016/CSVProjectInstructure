@@ -45,4 +45,10 @@ public class StudentDto {
     public void setUserState(String state) {
         this.user_state = state;
     }
+    
+    @Override
+    public String toString() {
+        return "StudentDto [id=" + this.user_id + ", name=" + this.user_name + ", courseId=" + this.courseId + ", state="
+                        + this.user_state + "]";
+    }
 }

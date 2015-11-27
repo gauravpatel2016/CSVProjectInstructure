@@ -39,4 +39,9 @@ public class CourseDto {
     public void setCourseState(String state) {
         this.course_state = state;
     }
+    
+    @Override
+    public String toString() {
+        return "CourseDto [id=" + this.course_id + ", name=" + this.course_name + ", state=" + this.course_state + "]";
+    }
 }
