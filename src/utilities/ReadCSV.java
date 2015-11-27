@@ -45,8 +45,24 @@ public class ReadCSV {
     }
     
     public List<StudentDto> getStudentData(final File studentFile) throws IOException {
-		return null;
-    
+
+	    
+	    final List<StudentDto> studentList = new ArrayList<>();
+	    try (final CSVParser csvRows = CSVParser.parse(studentFile, Charset.defaultCharset(), FileFormat.STUDENT_HEADER)) {
+	
+	      csvRows.iterator().next();// skip header
+	      
+	      for (final CSVRecord csvRecord : csvRows) {
+	            final StudentDto student = new StudentDto();
+	            student.setUserId(csvRecord.get("user_id"));
+	            student.setUserName(csvRecord.get("user_name"));
+	            student.setCourseId(csvRecord.get("course_id"));
+	            student.setUserState(csvRecord.get("state"));
+	            studentList.add(student);
+	      }
+	    }
+	    return studentList;
+	    
     }
 
     
