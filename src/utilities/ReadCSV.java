@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+
 import DataTransfer.CourseDto;
 import DataTransfer.StudentDto;
 
@@ -21,7 +22,10 @@ public class ReadCSV {
     
    
     public List<CourseDto> getCourseData(final File courseFile) throws IOException {
-    	
+    	if(!checkHeader(courseFile,"user_name")){
+        	  throw new FileNotFoundException("Invalid Course.csv File");
+      
+          }
     	
         final List<CourseDto> courseList = new ArrayList<>();
         
@@ -45,7 +49,10 @@ public class ReadCSV {
     }
     
     public List<StudentDto> getStudentData(final File studentFile) throws IOException {
-
+    	if(!checkHeader(studentFile,"user_name")){
+        	  throw new FileNotFoundException("Invalid Student.csv File");
+      
+          }
 	    
 	    final List<StudentDto> studentList = new ArrayList<>();
 	    try (final CSVParser csvRows = CSVParser.parse(studentFile, Charset.defaultCharset(), FileFormat.STUDENT_HEADER)) {
@@ -64,6 +71,11 @@ public class ReadCSV {
 	    return studentList;
 	    
     }
+
+	private boolean checkHeader(File studentFile, String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
     
 }
